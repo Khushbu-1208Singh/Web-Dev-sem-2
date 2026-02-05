@@ -22,7 +22,6 @@ let hour = date.getHours();
 let min = date.getMinutes();
 let second = date.getSeconds();
 const clock = document.getElementById("digi-clock");
-
 },1000)
 
 
