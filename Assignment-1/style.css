@@ -1,100 +1,139 @@
+:root {
+    --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --bg-gradient: linear-gradient(135deg, #e0c3fc 0%, #8ec5fc 100%);
+    --card-bg: rgba(255, 255, 255, 0.95);
+    --text-main: #2d3436;
+    --text-muted: #636e72;
+    --accent: #6c63ff;
+}
+
 * {
-      box-sizing: border-box;
-      font-family: "Segoe UI", sans-serif;
-    }
+    box-sizing: border-box;
+    transition: all 0.2s ease-in-out;
+}
 
-    body {
-      margin: 0;
-      min-height: 100vh;
-      background: linear-gradient(to right, #8fb0f5, #9fe0d8);
-      display: flex;
-      justify-content: center;
-      align-items: flex-start;
-    }
+body {
+    margin: 0;
+    padding: 40px 20px;
+    background: var(--bg-gradient);
+    background-attachment: fixed;
+    font-family: 'Inter', -apple-system, sans-serif;
+    color: var(--text-main);
+}
 
-    .container {
-      width: 90%;
-      max-width: 1100px;
-      margin: 30px auto;
-    }
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
 
-    h1 {
-      text-align: center;
-      color: #fff;
-      margin-bottom: 25px;
-    }
+.main-title {
+    text-align: center;
+    color: #fff;
+    font-size: 2.8rem;
+    font-weight: 800;
+    margin-bottom: 40px;
+    text-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
 
-    .dashboard {
-      display: grid;
-      grid-template-columns: 1fr 2fr;
-      gap: 20px;
-    }
+/* Dashboard Grid */
+.dashboard {
+    display: grid;
+    grid-template-columns: 350px 1fr;
+    gap: 30px;
+    margin-bottom: 30px;
+}
 
-    .card {
-      background: #fff;
-      border-radius: 12px;
-      padding: 20px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.12);
-    }
+/* Enhanced Card Style */
+.card {
+    background: var(--card-bg);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    border: 1px solid rgba(255,255,255,0.3);
+    backdrop-filter: blur(10px);
+}
 
-    .card h2 {
-      margin-top: 0;
-      color: #5f6df2;
-    }
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
 
-    label {
-      display: block;
-      margin-top: 10px;
-      font-size: 14px;
-      font-weight: 600;
-    }
+h2 {
+    color: var(--accent);
+    font-size: 1.5rem;
+    margin-bottom: 25px;
+    border-left: 4px solid var(--accent);
+    padding-left: 15px;
+}
 
-    input, select, textarea {
-      width: 100%;
-      margin-top: 6px;
-      padding: 8px;
-      border-radius: 6px;
-      border: 1px solid #ccc;
-      font-size: 14px;
-    }
+/* Form Refinement */
+.form-group {
+    margin-bottom: 20px;
+}
 
-    textarea {
-      resize: none;
-      height: 80px;
-    }
+label {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--text-muted);
+    margin-bottom: 8px;
+}
 
-    button {
-      width: 100%;
-      margin-top: 15px;
-      padding: 10px;
-      border: none;
-      border-radius: 8px;
-      background: linear-gradient(to right, #6a6ce8, #7d4fbf);
-      color: #fff;
-      font-size: 15px;
-      cursor: pointer;
-    }
+input, select, textarea {
+    background: #f8f9fa;
+    border: 2px solid transparent;
+    padding: 12px 15px;
+    border-radius: 10px;
+    width: 100%;
+}
 
-    .events-actions {
-      display: flex;
-      gap: 10px;
-      margin-bottom: 15px;
-    }
+input:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: var(--accent);
+    background: #fff;
+    box-shadow: 0 0 0 4px rgba(108, 99, 255, 0.1);
+}
 
-    .events-actions button {
-      margin-top: 0;
-      flex: 1;
-    }
+/* Modern Buttons */
+.btn-primary {
+    background: var(--primary-gradient);
+    color: white;
+    border: none;
+    padding: 14px;
+    border-radius: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(118, 75, 162, 0.3);
+}
 
-    .empty-msg {
-      text-align: center;
-      color: #888;
-      margin-top: 40px;
-      font-size: 14px;
-    }
+.btn-primary:hover {
+    filter: brightness(1.1);
+    box-shadow: 0 6px 20px rgba(118, 75, 162, 0.4);
+}
 
-    @media (max-width: 768px) {
-      .dashboard {
-        grid-template-columns: 1fr;
-      }
-    }
+.controls {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+/* Demo Section styling */
+.demo-section {
+    margin-top: 30px;
+}
+
+.demo-box {
+    background: #2d3436;
+    color: #dfe6e9;
+    padding: 20px;
+    border-radius: 12px;
+    font-family: 'Fira Code', monospace;
+    font-size: 0.9rem;
+}
+
+code {
+    background: rgba(255,255,255,0.1);
+    padding: 2px 6px;
+    border-radius: 4px;
+    color: #fab1a0;
+}

@@ -40,7 +40,7 @@ function createEventCard(eventData){
     //return the card for the addEvent function
     return card
 }
-// add the created event and append unside the event container
+// add the created event and append inside the event container 
 function addEvent(eventData){
     //if empty-state is present then remove it when new card will be added 
     const emptyState = document.querySelector(".empty-state")
