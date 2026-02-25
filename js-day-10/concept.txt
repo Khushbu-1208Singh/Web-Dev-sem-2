@@ -1,0 +1,6 @@
+promise is ues to handle asynchronous function in abetter way than call back hell.
+promise is having three states - 1.rejected , 2.fulfilled , 3.Pending.
+promise consumers - dot then , dot catch.
+if promise is fulfilled then it will go to [.then()method]
+if promise is rejected then it will go to [.catch()method]
+Callback hell disdvamntages - delay in execution  problem in readability.
